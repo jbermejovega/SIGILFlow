@@ -17,9 +17,18 @@ from .kernel import (
     SigilFlowKernel,
     build_reference_kernel,
 )
+from .flows import (
+    FlowCapability,
+    FlowAdapter,
+    FlowRequest,
+    FlowRoute,
+    FlowKernelRegistry,
+    build_default_registry,
+)
 
 __all__ = [
     "SCHEMA_ID", "TFG_REPO", "TFG_COMMIT", "SIGILBOOK_REPO", "SIGILBOOK_COMMIT", "SIGILFLOW_REPO",
     "SourceRole", "RepoPin", "FlowLibrary", "Section", "RestrictionMap", "Presheaf", "SheafPreimage",
     "JoinMeetFusion", "SyncPolicy", "SigilFlowKernel", "build_reference_kernel",
+    "FlowCapability", "FlowAdapter", "FlowRequest", "FlowRoute", "FlowKernelRegistry", "build_default_registry",
 ]
