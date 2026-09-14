@@ -1,0 +1,41 @@
+schema_id: SIGILFLOW_TOTAL_AST_RENORMALIZATION_V1
+status: CANONICAL_CANDIDATE
+root: SIGILFLOW_PRESHEAF_SHEAF_PREIMAGE_KERNEL_FUSION_V1
+sources:
+  - repository: mbenitezzs31-cloud/TFG
+    commit: 3f06c29063334e42d97218355adf02118d794a40
+    role: computational
+  - repository: jbermejovega/sigilbook
+    commit: 1ac6415d83adcde8d17df06f94fa324dd96acbce
+    role: semantic
+normalization:
+  stable_coordinates:
+    - repository
+    - path
+    - quno_context
+    - section_id
+  preserves:
+    - source_provenance
+    - quno_context
+    - bearer_distinction
+    - admission_spine
+renormalization:
+  fresh_occurrence: true
+  fresh_bearers: true
+  projection_digest_preserved: true
+  epoch_must_advance: true
+laws:
+  normalize_is_renormalize: false
+  same_projection_is_same_bearer: false
+  identity_transport: false
+  authority_transport: false
+  join_is_flatten: false
+  meet_is_identity_intersection: false
+admission_spine:
+  - PoetryKernel
+  - PACAPDG
+  - UAP
+  - SAFE_REPLAY
+canon:
+  - PLURA_MANENT
+  - PIORNALEGO_ES_CANON

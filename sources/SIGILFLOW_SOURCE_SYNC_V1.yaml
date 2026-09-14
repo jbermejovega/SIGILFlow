@@ -1,0 +1,45 @@
+id: SIGILFLOW_SOURCE_SYNC_V1
+mode: PINNED_READ_VALIDATE
+carrier_repository: jbermejovega/SIGILFlow
+sources:
+  computational:
+    repository: mbenitezzs31-cloud/TFG
+    commit: 3f06c29063334e42d97218355adf02118d794a40
+    paths:
+      - OpenQAOA/
+      - Qibo/
+      - Qimb/
+      - Quantum-Circuit-Simulator-DMRG/
+      - RQAOA/
+      - TensorCircuit/
+      - cirq/
+      - pennylane/
+      - Resultados y Discusión/
+  semantic:
+    repository: jbermejovega/sigilbook
+    commit: 1ac6415d83adcde8d17df06f94fa324dd96acbce
+    surfaces:
+      - PoetryKernel
+      - PACAPDG
+      - UAP
+      - SAFE_REPLAY
+sync_guards:
+  auto_pull: false
+  auto_merge: false
+  auto_push: false
+  diff_before_update: true
+  human_review_required: true
+  source_history_preserved: true
+  source_pin_is_not_authority_transport: true
+kernel_fusion:
+  meet:
+    - typed_flow_interface
+    - dependency_provenance
+    - epoch_lineage
+    - python_notebook_surface
+  join:
+    - quantum_flow_libraries
+    - poetry_kernel_semantics
+    - PACAPDG
+    - UAP
+    - SAFE_REPLAY

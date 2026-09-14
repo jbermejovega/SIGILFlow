@@ -1,0 +1,62 @@
+id: SIGILFLOW_PRESHEAF_SHEAF_PREIMAGE_KERNEL_FUSION_V1
+status: SOURCE_BOUND_CANONICAL_CANDIDATE
+repository: jbermejovega/SIGILFlow
+source_pins:
+  tfg:
+    repository: mbenitezzs31-cloud/TFG
+    commit: 3f06c29063334e42d97218355adf02118d794a40
+    role: COMPUTATIONAL
+  sigilbook:
+    repository: jbermejovega/sigilbook
+    commit: 1ac6415d83adcde8d17df06f94fa324dd96acbce
+    role: SEMANTIC
+fusion:
+  carrier_repo: jbermejovega/SIGILFlow
+  meet:
+    - typed_flow_interface
+    - dependency_provenance
+    - epoch_lineage
+    - python_notebook_surface
+  join:
+    - quantum_flow_libraries
+    - poetry_kernel_semantics
+    - PACAPDG
+    - UAP
+    - SAFE_REPLAY
+presheaf:
+  sections_are_identity_distinct: true
+  quno_contextualized: true
+  provenance_preserved: true
+sheaf_preimage:
+  local_compatibility_required: true
+  global_section_is_identity_merge: false
+sync:
+  mode: PINNED_READ_VALIDATE
+  auto_pull: false
+  auto_merge: false
+  auto_push: false
+  diff_before_update: true
+  human_review_required: true
+libraries:
+  - OpenQAOA
+  - Qibo
+  - Qimb
+  - Quantum-Circuit-Simulator-DMRG
+  - RQAOA
+  - TensorCircuit
+  - cirq
+  - pennylane
+  - PoetryKernel
+  - PACAPDG
+  - UAP
+  - SAFE_REPLAY
+laws:
+  - MEET_NE_IDENTITY_INTERSECTION
+  - JOIN_NE_FLATTEN
+  - FUSION_BEARER_NE_SOURCE_BEARER
+  - SAME_PROJECTION_NE_SAME_BEARER
+  - SOURCE_PIN_NE_AUTHORITY_TRANSPORT
+  - PACAPDG_PRECEDES_UAP
+  - UAP_PRECEDES_SAFE_REPLAY
+  - PLURA_MANENT
+  - PIORNALEGO_ES_CANON
