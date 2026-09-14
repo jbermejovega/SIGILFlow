@@ -1,0 +1,31 @@
+schema_id: SIGILFLOW_KAPSYLA_RENORMALIZED_KERNEL_V1
+status: CANONICAL
+source_kernel: SIGILFLOW_PRESHEAF_SHEAF_PREIMAGE_KERNEL_FUSION_V1
+source_main_commit: c64b8a6f14c52f809ae2ab7066207dc1f3324e74
+sigilbook_kapsyla_reference:
+  commit: e21451ae9bb50af2ffee1756d7bace4592365592
+  name: KAPSYLA_COAXIAL_SKAFFO_STABILIZE_NORMALIZE_RENORMALIZE_V1
+spine:
+  - COAXIAL_MERGE
+  - SKAFFO
+  - STABILIZE
+  - WEAVE
+  - NORMALIZE
+  - RENORMALIZE
+  - PACAPDG
+  - UAP
+  - SAFE_REPLAY
+  - KAPSYLA
+laws:
+  normalize_is_renormalize: false
+  same_projection_is_same_bearer: false
+  identity_transport: false
+  authority_transport: false
+  scheduler_transport: false
+  runtime_transport: false
+  kapsyla_requires_uap: true
+  kapsyla_requires_safe_replay: true
+  fresh_bearer_required: true
+canon:
+  - PLURA_MANENT
+  - PIORNALEGO_ES_CANON
