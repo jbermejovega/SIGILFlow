@@ -1,0 +1,112 @@
+id: CLIKK42_SYNKK_SIGILFLOW_V1
+repo: jbermejovega/SIGILFlow
+branch: main
+status:
+  canonical_candidate: true
+  clikk42_synkk: true
+  registry_capsule: true
+  append_only: true
+  safe_replay_admissible: true
+  strikk_typed: true
+  quno_typed: true
+  kapsyla_ready: true
+
+intent:
+  summary: >-
+    Synchronize SIGILFlow into the CLIKK42 surface as a replay-safe registry
+    capsule, without rewriting existing quantum-workflow source trees.
+  requested_by: JJBV
+  invocation: synkk SIGILFlow in clikk42
+
+clikk42_surface:
+  role:
+    - click_surface_index
+    - registry_synchronization_anchor
+    - safe_replay_entrypoint
+    - pacapdg_trace_target
+  laws:
+    - click_does_not_strip_provenance
+    - click_does_not_force_identity_transport
+    - click_emits_witness_receipts
+    - click42_is_registry_surface_not_owner
+
+sigilflow_binding:
+  repository: jbermejovega/SIGILFlow
+  default_branch: main
+  observed_top_level_surfaces:
+    - OpenQAOA
+    - Qibo
+    - Qimb
+    - Quantum-Circuit-Simulator-DMRG
+    - RQAOA
+    - TensorCircuit
+    - cirq
+    - docs
+    - pennylane
+    - registry
+    - sigilflow
+    - sources
+    - tests
+  binding_law: >-
+    Existing workflow directories remain source surfaces. CLIKK42 adds a
+    synchronization registry layer; it does not rename, delete, or collapse
+    them.
+
+wo_conservation:
+  law: ONCE_WO_ALWAYS_WO_WITHIN_SIGIL_API
+  public_boundary:
+    input: WO[SIGILFlow]
+    output: WO[Outcome[CLIKK42Synkk, Obstruction]]
+  forbidden:
+    - WO_LOSS
+    - SILENT_DEWO
+    - BARE_API_RETURN
+    - PROVENANCE_ERASURE
+    - IDENTITY_ERASURE
+
+pacapdg_trace:
+  pipeline:
+    - WO[SIGILFlow]
+    - PACA_CAPTURE
+    - WO[PACA[SIGILFlow]]
+    - PDG_TRACE
+    - WO[PDG[PACA[SIGILFlow]]]
+    - CLIKK42_SYNKK
+    - WO[CLIKK42SynkkWitness]
+    - KAPSYLA_SEAL
+  invariant: WO_PACA_WO_PDG_WO
+
+namespace_policy:
+  deprecated_primary_namespace:
+    - quantum
+  normalized_operational_namespace:
+    - QUOQUANTUMQQUAPP
+  note: >-
+    Existing educational or historical directory names are preserved as source
+    names. New canonical workflow references should use QUOQUANTUMQQUAPP when
+    referring to the normalized SIGIL namespace.
+
+koko_hooks:
+  hook_type: WO[A] -> WO[Outcome[B,E]]
+  rule: hooks_do_not_unwrap
+  phases:
+    - PRE_KOKO
+    - AROUND_KOKO
+    - POST_KOKO
+    - ON_HOLD
+    - ON_REJECT
+    - ON_ADMIT
+    - ON_REPLAY
+    - ON_KAPSYLA_SEAL
+
+sync_policy:
+  mode: append_only_registry_entry
+  code_mutation: false
+  destructive_changes: false
+  direct_main_mutation: false
+  pull_request_required: true
+  merge_method: squash
+
+compact_canon: >-
+  CLIKK42 clicks. SIGILFlow syncs. WO wraps. PACA captures. PDG traces.
+  KOKO hooks preserve. QUOQUANTUMQQUAPP normalizes. KAPSYLA seals. UNUM TENET.
